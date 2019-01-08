@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VideoManagement.Models;
+using VideoManagement.ViewModels;
 
 namespace VideoManagement.Controllers
 {
@@ -18,7 +19,25 @@ namespace VideoManagement.Controllers
         {
             var movie = new Movie {Name = "Lord of the Rings"};
 
-            return View(movie);
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Bob"},
+                new Customer { Name = "John"},
+                new Customer { Name = "Joe"}
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+            return View(viewModel);
         }
+
+
+        
+
+
     }
 }
