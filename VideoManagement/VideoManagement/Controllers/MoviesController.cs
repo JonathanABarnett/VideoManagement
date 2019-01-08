@@ -12,32 +12,27 @@ namespace VideoManagement.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var movies = GetMovies();
+
+            return View(movies);
         }
 
-        public ActionResult Random()
+        public ActionResult Details(int id)
         {
-            var movie = new Movie {Name = "Lord of the Rings"};
+            var movie = GetMovies().SingleOrDefault(m => m.Id == id);
 
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Bob"},
-                new Customer { Name = "John"},
-                new Customer { Name = "Joe"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-            return View(viewModel);
+            return View(movie);
         }
 
-
-        
-
+        public IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie { Id = 1, Name = "Lord of the Rings"},
+                new Movie { Id = 2, Name = "Harry Potter"},
+                new Movie { Id = 3, Name = "Planet of the Apes"}
+            };
+        }
 
     }
 }
