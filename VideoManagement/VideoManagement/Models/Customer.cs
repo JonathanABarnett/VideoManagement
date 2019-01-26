@@ -19,8 +19,13 @@ namespace VideoManagement.Models
         [Display(Name = "Date of Birth")]
         public DateTime? BirthDate { get; set; }
 
+        //[Required]
+        //[EmailAddress]
+        //public string Email { get; set; }
+
         public MembershipType MembershipType { get; set; }
 
+        [Display(Name = "Membership Type")]
         public int MembershipTypeId { get; set; }
     }
 }
