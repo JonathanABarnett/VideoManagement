@@ -11,6 +11,6 @@ namespace VideoManagement.Models
         public int SignUpFee { get; set; }
         public int DurationInMonths { get; set; }
         public int DiscountRate { get; set; }
-
+        public string Name { get; set; }
     }
 }
