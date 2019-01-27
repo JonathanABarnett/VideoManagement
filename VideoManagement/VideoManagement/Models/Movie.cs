@@ -11,11 +11,12 @@ namespace VideoManagement.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the movie's Title")]
+        [Display(Name = "Title")]
         [MaxLength(255)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the release date")]
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
@@ -23,7 +24,8 @@ namespace VideoManagement.Models
         [Display(Name = "Date Added")]
         public DateTime DateAdded { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The number in stock must be between 1 - 20")]
+        [Range(1,20)]
         [Display(Name = "Number in Stock")]
         public int NumberInStock { get; set; }
 
