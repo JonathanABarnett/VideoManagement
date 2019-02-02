@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Microsoft.Ajax.Utilities;
 using VideoManagement.Models;
 
 namespace VideoManagement.Dto
@@ -19,6 +20,8 @@ namespace VideoManagement.Dto
 
         //[Min18YearsIfAMember]
         public DateTime? BirthDate { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
 
         //[Required]
         //[EmailAddress]
